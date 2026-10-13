@@ -1,35 +1,42 @@
-# 🏛️ TRIZ Universal: Open-Source AI Architecture & Inventive Consultant
+# 🏛️ Генрих (Genrikh): Universal Inventive Problem Solver on Open-Source AI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Hacktoberfest 2026](https://img.shields.io/badge/Hacktoberfest-2026-orange.svg)](https://dev.to/challenges/hacktoberfest-week2-2026-10-12)
-[![Local AI](https://img.shields.io/badge/Inference-100%25%20Local%20%7C%20Private-emerald.svg)]()
+[![Local AI](https://img.shields.io/badge/Inference-100%25%20Local%20%7C%20Air--Gapped-emerald.svg)]()
 [![Model](https://img.shields.io/badge/Open--Weight-Gemma%202%20%7C%20Llama%203-cyan.svg)]()
+[![Sentry Tracing](https://img.shields.io/badge/Sentry-Agent%20Tracing-darkred.svg)](https://sentry.io/)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
+[![Voice Briefings](https://img.shields.io/badge/ElevenLabs-Voice%20Briefings-purple.svg)](https://elevenlabs.io/)
 
-> **Solve impossible architectural trade-offs without buying expensive enterprise tiers or leaking client IP.**  
-> Powered by classical **TRIZ (ARIZ-AI)** and **Open-Source AI** (Gemma 2, Ollama, local open-weight models).
+> **Solve impossible trade-offs across Software, Physical Engineering, and Business without compromise, expensive enterprise tiers, or leaking intellectual property.**  
+> Named in honor of **Genrikh Saulovich Altshuller (1926–1998)**, the founder of TRIZ (Theory of Inventive Problem Solving).  
+> Powered by classical **ARIZ-AI**, local open-weight models (**Google Gemma 2**), **Sentry Agent Tracing**, **Render 1-Click Deploy**, and **ElevenLabs Voice Briefings**.
 
 ---
 
-## 💡 The "Side Hustle" Dilemma
+## 💡 The Philosophy of Genrikh Altshuller
 
-When freelancers, solo-founders, and small engineering teams build products, they hit painful architectural deadlocks:
-* *"We need offline-first speed, but distributed multi-device sync causes conflicts and requires an expensive locking cluster."*
-* *"We need 10,000 requests/sec during viral launches, but we can't afford a $1,000/mo AWS enterprise RDS/Redis bill."*
-* *"We need continuous medical IoT sensor telemetry, but the coin-cell battery dies in 8 hours."*
+In 1946, Soviet inventor and researcher **Genrikh Altshuller** set out to answer a fundamental question: *Can the process of invention be taught as an exact science?*
 
-Traditional consulting costs **$150–$300/hour**, while standard AI assistants default to lazy middle-ground compromises (*"just add Redis"*, *"buy another server"*, *"drop one of your requirements"*).
+After analyzing hundreds of thousands of patents worldwide, Altshuller uncovered a profound truth:
+> **Real innovation is NOT compromise.**  
+> Conventional thinking resolves conflicting requirements by meeting in the middle (e.g. degrading quality to save costs, buying more hardware to handle bad code, sacrificing battery for compute).  
+> **True inventive thinking sharpens the conflict into an atomic Physical Contradiction and eliminates it completely using latent resources already present in the system.**
 
-**TRIZ Universal** transforms how technical consultants and solo builders operate. It implements the classical Soviet Theory of Inventive Problem Solving (**ТРИЗ / ARIZ-AI**) directly inside a local, open-source AI agent:
-1. **Zero Compromise:** Never weakens a hard requirement. It sharpens the conflict into an atomic **Physical Contradiction** and resolves it.
-2. **$0 Marginal Cost:** Mandates an **Ideal Final Result (IFR)** and audits **Substance-Field Resources (VPR)** to solve problems using latent system capabilities already present.
-3. **100% Data & IP Privacy:** Runs completely offline or on local open-weight models (**Gemma 2**, **Llama 3**). No sensitive patent ideas, proprietary schemas, or customer data ever leave your laptop.
+Today, standard LLMs default to lazy middle-ground compromises (*"just add Redis"*, *"buy a larger AWS cluster"*, *"drop your precision"*).
+
+**Генрих (Genrikh)** brings Altshuller's rigorous methodology into the era of modern AI:
+1. **Universal Problem Scope:** From distributed database synchronization to IoT hardware battery life and organizational scaling bottlenecks.
+2. **Strict Dual-Loop ARIZ-AI Pipeline:** Guarantees zero compromise through an internal **State Lock** before presenting solutions.
+3. **$0 Marginal Cost:** Mandates the **Ideal Final Result (IFR)** and leverages latent **Substance-Field Resources (VPR)** to solve problems with zero added cost.
+4. **100% Privacy & Air-Gapped IP:** Runs locally on **Gemma 2** via Ollama or standalone offline heuristics. Not a single byte of trade secret leaves your machine.
 
 ---
 
 ## ⚡ The Dual-Loop ARIZ-AI Architecture
 
-TRIZ Universal implements a strict **Dual-Loop Execution Pipeline** designed to prevent post-hoc rationalizations:
+To eliminate AI hallucinations and post-hoc rationalizations, Genrikh enforces a strict **Dual-Loop Execution Pipeline**:
 
 ```mermaid
 flowchart TD
@@ -42,14 +49,32 @@ flowchart TD
     end
 
     subgraph Loop2["Loop 2: Contextual Output Delivery (Progressive Disclosure)"]
-        L1["Layer 1: Plain-Language Core<br/>(Zero Jargon, Solution-First for Clients & Management)"]
+        L1["Layer 1: Plain-Language Executive Core<br/>(Zero Jargon, Solution-First for Stakeholders)"]
         L2["Layer 2: Professional TRIZ Passport<br/>(Auditable Engineering & Patent Passport)"]
+        L3["Layer 3: ElevenLabs Audio Executive Briefing<br/>(High-Impact Spoken Debriefing)"]
     end
 
     Loop1 --> Loop2
     S5 -.->|Locks State| L1
     S5 -.->|Locks State| L2
+    S5 -.->|Locks State| L3
 ```
+
+### Sentry Agent Tracing
+Every step in Loop 1 and Loop 2 is instrumented with **Sentry Agent Tracing** (`sentry_sdk.start_span` / `trace_ariz_step`). Inspect reasoning latencies, prompt token counts, state lock integrity, and error boundaries in real-time.
+
+---
+
+## 🏆 Hacktoberfest 2026 Partner Integrations
+
+Genrikh proudly demonstrates deep integration across four major open-source and developer ecosystems:
+
+| Track / Partner | Integration in Genrikh | Module |
+|---|---|---|
+| **Google Gemma** | Native Gemma 2 canonical chat formatting (`<start_of_turn>`), local Ollama execution, and cloud fallback via Google GenAI SDK. | `genrikh/gemma.py`, `genrikh/engine.py` |
+| **Sentry** | AI Agent Tracing across all 5 ARIZ reasoning steps, tracking agent tokens, execution spans, and state lock contexts. | `genrikh/tracing.py` |
+| **Render** | Production-ready 1-click cloud deployment with `render.yaml` infrastructure-as-code and lightweight multi-stage `Dockerfile`. | `render.yaml`, `Dockerfile` |
+| **ElevenLabs** | Spoken audio debriefs generated automatically from Layer 1 solutions for non-technical stakeholders and client pitches. | `genrikh/voice.py` |
 
 ---
 
@@ -63,119 +88,125 @@ cd triz-universal
 pip install -e .
 ```
 
-### 2. Run the Interactive CLI
+Both `genrikh` and `triz` CLI commands are registered and interchangeable!
 
-Resolve any technical contradiction in your terminal:
+### 2. Interactive Contradiction Solver
+
+Solve an impossible technical deadlock in your terminal:
 
 ```bash
 # Interactive solver
-triz solve
+genrikh solve
 
-# Or provide parameters directly
-triz solve \
-  --problem "High database read concurrency locks write transactions" \
-  --param-a "Read Throughput" \
-  --param-b "Database Memory & CPU Cost"
+# Direct CLI parameters
+genrikh solve \
+  --problem "High database read throughput causes locking and latency spikes on writes" \
+  --param-a "Read Concurrency" \
+  --param-b "Write Latency & Storage Cost"
 ```
 
-### 3. Generate a High-Value Consulting Report (Side Hustle Mode)
+### 3. High-Value Consulting Report Generator
 
-Generate a complete **Architectural Audit & Roadmap** for a client project:
+Generate an executive architectural roadmap or patent bypass audit:
 
 ```bash
-# Run one of the pre-built client archetypes
-triz consult --template freelancer_offline_sync --out report.md
+# Generate report from pre-built client archetypes
+genrikh consult --template freelancer_offline_sync --out report.md
 
-# Or launch interactive client intake
-triz consult
+# Generate report with ElevenLabs executive audio briefing
+genrikh consult --template solo_founder_scale --voice --voice-out briefing.mp3
 ```
 
-### 4. Interactive Contradiction Matrix
+### 4. Interactive Altshuller Matrix Explorer
 
-Look up classical Altshuller principles mapped to modern software & business equivalents:
+Explore the classical 39x39 Altshuller Matrix mapped to modern software, hardware, and business systems:
 
 ```bash
-# Look up contradiction: Speed (9) vs Memory (1)
-triz matrix --improve 9 --worsen 1
+# Find principles resolving Speed (9) vs Reliability (27)
+genrikh matrix --improve 9 --worsen 27
 
-# Search parameters by keyword
-triz matrix --search latency
+# Search matrix parameters by keyword
+genrikh matrix --search latency
 ```
 
 ### 5. Launch the Web UI
 
 ```bash
-triz serve --port 8000
+genrikh serve --port 8000
 ```
-Open `http://localhost:8000` to access the interactive web dashboard with real-time template loading and Markdown export.
+Open `http://localhost:8000` for an interactive browser dashboard with template loading, instant solver previews, and Markdown report downloads.
 
 ---
 
-## 🧠 Open-Source AI Engine (How it Works)
+## 🌐 Deploy to Render in 1 Click
 
-TRIZ Universal is designed around **Open Innovation** and supports multiple execution backends:
+Genrikh includes a declarative `render.yaml` blueprint:
 
-| Backend | Environment | Best For | Privacy |
-|---|---|---|---|
-| **Ollama (Gemma 2 / Llama 3)** | Local (`http://localhost:11434`) | Production local consulting, solo-founders | 🔒 100% Local (Zero data leakage) |
-| **Deterministic Offline Engine** | Zero-dependency fallback | Instant testing, air-gapped environments | 🔒 100% Offline (No LLM needed) |
-| **OpenAI-Compatible Local APIs** | LM Studio, vLLM, llama.cpp | Self-hosted GPU servers | 🔒 Self-hosted |
-| **Google Gemma / Gemini API** | `GEMMA_API_KEY` or `GEMINI_API_KEY` | Cloud fallback | Cloud |
+1. Fork or push this repository to GitHub.
+2. In the [Render Dashboard](https://dashboard.render.com/), choose **New Blueprint Instance**.
+3. Connect your repository. Render automatically builds the `Dockerfile` and deploys the FastAPI web application.
+4. (Optional) Set `SENTRY_DSN` and `ELEVENLABS_API_KEY` in your Render Environment Variables for live telemetry and audio generation.
 
-### Running with Gemma 2 on Ollama:
+---
+
+## 🔬 Gemma 2 Benchmark Results
+
+Run the built-in benchmark to evaluate Gemma 2's reasoning across diverse domains:
+
 ```bash
-# In another terminal:
-ollama run gemma2
-
-# TRIZ Universal automatically detects Ollama at http://localhost:11434
-triz solve
+python examples/gemma2_benchmark.py
 ```
 
----
-
-## 💼 Side Hustle Case Studies
-
-The `examples/` directory contains complete end-to-end consulting audit scripts for 3 common client dilemmas:
-
-### Case 1: Freelance Offline Mobile Invoicing Sync (`examples/freelance_db_sync.py`)
-* **Client:** LocalCraft Freelance Field Services.
-* **Problem:** Field technicians need instant receipt/invoice creation without network delays, but syncing across devices causes merge conflicts and traditionally requires expensive distributed lock servers.
-* **TRIZ Solution:** Separation in Time & Structure (Principles #4 Asymmetry, #10 Preliminary Action, #2 Extraction). Uses a local append-only log with deterministic conflict resolution (CRDTs) and background batch reconciliation. **Savings: $0 cloud locking servers.**
-
-### Case 2: Solo Founder 10k RPS Scale on $20/month (`examples/solo_founder_scale.py`)
-* **Client:** Bootstrapped Micro-SaaS.
-* **Problem:** Sudden viral launch traffic threatens to crash the single VPS database, but the founder cannot afford enterprise database clusters.
-* **TRIZ Solution:** Principle #28 (Mechanics Substitution) & Principle #10 (Preliminary Action). Exploits OS kernel page cache and pre-rendered edge caching to serve 98% of read traffic without touching the database process.
-
-### Case 3: Continuous IoT Telemetry vs Battery (`examples/iot_wearable_battery.py`)
-* **Client:** BioSense Wearables.
-* **Problem:** Clinical safety requires continuous patient monitoring, but BLE transmission drains a coin-cell battery in 8 hours.
-* **TRIZ Solution:** Principle #19 (Periodic Action) & Principle #16 (Partial/Excessive Action). Implements on-device edge anomaly delta filtering: transmits only statistical deviations while buffering normal heartbeats locally. **Battery life increased from 8 hours to 34 days.**
+### Benchmark Highlights:
+* **Domain 1: Software Architecture** (Offline Distributed Sync)
+  * *Contradiction:* Local Instant Mutability vs Global Consistency.
+  * *Resolved via:* Principles #4 (Asymmetry), #10 (Preliminary Action), #2 (Extraction).
+  * *Impact:* $0 cloud locking infrastructure, 0ms local mutation latency.
+* **Domain 2: Physical / IoT Engineering** (Wearable Sensor Telemetry)
+  * *Contradiction:* High Medical Sampling Frequency vs Battery Energy Drain.
+  * *Resolved via:* Principles #19 (Periodic Action), #16 (Partial/Excessive Action).
+  * *Impact:* Coin-cell battery lifespan extended from 8 hours to 34 days.
+* **Domain 3: Business & Micro-SaaS Scale** (10k RPS Viral Launch on a Budget)
+  * *Contradiction:* Massive Concurrent Read Spikes vs $20/mo VPS Memory Bounds.
+  * *Resolved via:* Principles #28 (Mechanics Substitution) & #10 (Preliminary Action).
+  * *Impact:* 98% edge cache absorption, $0 added database tier costs.
 
 ---
 
-## 📦 Using as an Agent Skill
+## 🧠 Multi-Backend Open-Source AI Architecture
 
-This repository also hosts the upstream source for the `triz-universal` agent skill. You can directly install it into **Google Antigravity**, **Claude Code**, **Cursor**, or other coding agents:
+Genrikh is designed with **Open Innovation** at its core:
 
-Copy the folder `skills/triz-universal` into your agent's config directory:
+| Backend | Runtime | Use Case | Privacy |
+|---|---|---|---|
+| **Local Gemma 2 / Llama 3** | Ollama (`http://localhost:11434`) | Default production mode | 🔒 100% Air-Gapped (Zero IP leakage) |
+| **Deterministic Offline Engine** | Python rule heuristics | Air-gapped environments, CI/CD | 🔒 100% Offline (Zero dependencies) |
+| **Google GenAI / Gemma API** | `GEMMA_API_KEY` or `GEMINI_API_KEY` | High-throughput cloud fallback | Cloud |
+| **OpenAI-Compatible Local APIs** | vLLM, LM Studio, llama.cpp | Self-hosted GPU infrastructure | 🔒 Self-Hosted |
+
+---
+
+## 📦 Antigravity & Agent Skill Bundle
+
+Genrikh preserves the full native skill bundle under `skills/triz-universal/` with 16 reference manuals:
+
 ```text
-~/.gemini/config/skills/triz-universal/
-  ├── SKILL.md                          # Primary instruction bundle & ARIZ pipeline
-  └── references/                       # 16 deep reference manuals & catalogs
-      ├── 01-ikr-ideality.md
-      ├── 02-contradictions.md
-      ├── 03-separation-principles.md
-      ├── 05-40-principles-catalog.md
-      ├── 11-contradiction-matrix.md
-      └── ariz-deep/                    # Canonical ARIZ-85-V analysis & resolution
+skills/triz-universal/
+  ├── SKILL.md                          # Primary agent skill bundle
+  └── references/                       # 16 deep Altshuller manuals & catalogs
+      ├── 01-ikr-ideality.md            # Ideal Final Result (IFR) formulation
+      ├── 02-contradictions.md          # Technical & Physical contradictions
+      ├── 03-separation-principles.md   # Space, Time, Condition, System Level
+      ├── 05-40-principles-catalog.md   # 40 Inventive Principles with modern examples
+      ├── 11-contradiction-matrix.md   # Complete Altshuller 39x39 lookup table
+      └── ariz-deep/                    # Canonical ARIZ-85-V step-by-step algorithms
 ```
+
+Drop it directly into `~/.gemini/config/skills/triz-universal/`, Claude Code, or Cursor!
 
 ---
 
 ## 🧪 Testing
-
-Run the automated test suite:
 
 ```bash
 python -m pytest tests
@@ -183,14 +214,8 @@ python -m pytest tests
 
 ---
 
-## 📜 License
+## 📜 License & Acknowledgments
 
-Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
-
----
-
-## 🏆 Hacktoberfest 2026 Open-Source AI Challenge
-
-Built with pride for the **[Hacktoberfest Open-Source AI Challenge: Week 2 (Side Hustle)](https://dev.to/challenges/hacktoberfest-week2-2026-10-12)**.  
-Author: [@torrua](https://github.com/torrua)  
-Read our submission post on DEV.to: [DEV_POST.md](DEV_POST.md)
+* Distributed under the **MIT License**. See [LICENSE](LICENSE).
+* Dedicated to the legacy of **Genrikh Saulovich Altshuller (1926–1998)**.
+* Built with pride by [@torrua](https://github.com/torrua) for the **[Hacktoberfest Open-Source AI Challenge: Week 2 (Side Hustle)](https://dev.to/challenges/hacktoberfest-week2-2026-10-12)**.

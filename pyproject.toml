@@ -3,22 +3,21 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "triz-universal"
+name = "genrikh"
 version = "1.0.0"
-description = "Universal Inventive Problem Solver & Architectural Consultant on Open-Source AI"
+description = "Universal Inventive Problem Solver on Open-Source AI (In Honor of Genrikh Altshuller)"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
 authors = [
     { name = "torrua" }
 ]
 keywords = [
-    "triz", "ariz", "ai-agent", "open-source-ai", "hacktoberfest",
-    "architecture", "consulting", "side-hustle", "gemma", "ollama"
+    "genrikh", "altshuller", "triz", "ariz", "ai-agent", "open-source-ai",
+    "hacktoberfest", "gemma", "sentry", "render", "elevenlabs"
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Topic :: Scientific/Engineering :: Artificial Intelligence"
 ]
@@ -27,7 +26,8 @@ dependencies = [
     "pydantic>=2.0.0",
     "httpx>=0.27.0",
     "fastapi>=0.110.0",
-    "uvicorn>=0.28.0"
+    "uvicorn>=0.28.0",
+    "sentry-sdk>=2.0.0"
 ]
 
 [project.optional-dependencies]
@@ -37,4 +37,8 @@ dev = [
 ]
 
 [project.scripts]
-triz = "triz.cli:main"
+genrikh = "genrikh.cli:main"
+triz = "genrikh.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["genrikh*"]

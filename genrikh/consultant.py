@@ -7,8 +7,8 @@ architectural audits, patent bypass studies, and zero-budget engineering reviews
 from typing import Dict, List, Optional
 from datetime import datetime
 from pydantic import BaseModel
-from triz.core import DualLoopResult
-from triz.engine import OpenSourceAIEngine
+from genrikh.core import DualLoopResult
+from genrikh.engine import OpenSourceAIEngine
 
 class ClientProject(BaseModel):
     client_name: str

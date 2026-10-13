@@ -1,15 +1,18 @@
 """
-Unit tests for TRIZ Universal.
+Unit tests for Genrikh.
 """
 
 import pytest
-from triz.matrix import PRINCIPLES, PARAMETERS, lookup_principles, search_parameters
-from triz.core import (
+from genrikh.matrix import PRINCIPLES, PARAMETERS, lookup_principles, search_parameters
+from genrikh.core import (
     Constraint, ConstraintType, PhysicalContradiction, ResourceVPR,
     VerificationPlan, ARIZStateLock, OutcomeType, StrategyType, ConfidenceLevel
 )
-from triz.engine import OfflineTRIZEngine, OpenSourceAIEngine
-from triz.consultant import ConsultantSession, TEMPLATES, ClientProject
+from genrikh.engine import OfflineTRIZEngine, OpenSourceAIEngine
+from genrikh.consultant import ConsultantSession, TEMPLATES, ClientProject
+from genrikh.gemma import format_gemma_chat_prompt
+from genrikh.tracing import trace_step, record_state_lock_trace
+from genrikh.voice import ElevenLabsVoice
 
 def test_principles_catalog():
     assert len(PRINCIPLES) == 40
@@ -37,7 +40,7 @@ def test_matrix_search():
     ids = [r.id for r in results]
     assert 15 in ids or 25 in ids
 
-def test_offline_triz_engine():
+def test_offline_genrikh_engine():
     engine = OfflineTRIZEngine()
     result = engine.solve(
         problem="High database read concurrency locks write transactions",
@@ -45,8 +48,8 @@ def test_offline_triz_engine():
         param_b="Database Memory & CPU Cost"
     )
     assert result.state_lock.outcome_type == OutcomeType.ELIMINATE
-    assert "### 💡 Inventive Resolution" in result.layer_1
-    assert "### 💡 TRIZ Inventive Resolution Passport" in result.layer_2
+    assert "### 💡 Решение от Генриха" in result.layer_1
+    assert "### 💡 ТРИЗ-Паспорт Решения" in result.layer_2
     assert len(result.state_lock.mobilized_vpr) > 0
     assert result.confidence == ConfidenceLevel.PATTERN
 
@@ -58,3 +61,21 @@ def test_consultant_session():
     assert "# 🏛️ TRIZ Inventive Audit & Architectural Roadmap" in md
     assert "Executive Summary" in md
     assert "Latent Resource Ledger (VPR" in md
+
+def test_gemma_prompt_formatting():
+    prompt = format_gemma_chat_prompt("High latency vs memory", "Speed", "Memory")
+    assert "<start_of_turn>user" in prompt
+    assert "<end_of_turn>" in prompt
+    assert "<start_of_turn>model" in prompt
+    assert "Genrikh" in prompt
+
+def test_sentry_tracing_step():
+    with trace_step("genrikh.test_step", "Testing Sentry Span") as span:
+        assert True
+
+def test_voice_fallback():
+    voice = ElevenLabsVoice()
+    # Without API key, generate_audio safely returns None
+    if not voice.is_available():
+        res = voice.generate_audio("Test audio")
+        assert res is None

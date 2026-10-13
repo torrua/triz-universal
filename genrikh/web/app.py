@@ -8,13 +8,15 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel
 from typing import Optional, List
 
-from triz.engine import OpenSourceAIEngine
-from triz.consultant import TEMPLATES, ClientProject, ConsultantSession
-from triz.matrix import PRINCIPLES, PARAMETERS, lookup_principles
+from genrikh.engine import OpenSourceAIEngine
+from genrikh.consultant import TEMPLATES, ClientProject, ConsultantSession
+from genrikh.matrix import PRINCIPLES, PARAMETERS, lookup_principles
+from genrikh.voice import ElevenLabsVoice
 
-app = FastAPI(title="TRIZ Universal", description="Open-Source AI Architecture Consultant")
+app = FastAPI(title="Genrikh", description="Universal Inventive Problem Solver on Open-Source AI")
 engine = OpenSourceAIEngine()
 consultant = ConsultantSession(engine)
+voice = ElevenLabsVoice()
 
 class SolveRequest(BaseModel):
     problem: str
@@ -50,7 +52,7 @@ HTML_CONTENT = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRIZ Universal — Open-Source AI Architecture Consultant</title>
+  <title>Генрих (Genrikh) — Универсальный Изобретательский Партнер</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
@@ -65,7 +67,7 @@ HTML_CONTENT = """<!DOCTYPE html>
   <header class="glass border-b border-gray-800 sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <span class="text-2xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">🏛️ TRIZ Universal</span>
+        <span class="text-2xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">🏛️ Генрих (Genrikh)</span>
         <span class="text-xs uppercase tracking-widest px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 font-mono">Open-Source AI</span>
       </div>
       <div class="flex items-center gap-4 text-sm text-gray-400">
@@ -80,10 +82,10 @@ HTML_CONTENT = """<!DOCTYPE html>
   <!-- Hero -->
   <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
     <div class="text-center space-y-3 max-w-3xl mx-auto">
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Solve Impossible Trade-Offs Without Compromise</h1>
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Решение противоречий без компромиссов</h1>
       <p class="text-gray-400 text-base md:text-lg">
-        The Open-Source AI Architectural Consultant for freelancers and solo-founders.
-        Implements classical TRIZ (ARIZ-AI) to eliminate contradictions using latent resources with <strong class="text-cyan-300">$0 marginal cost</strong>.
+        Универсальный инструмент для инженеров, изобретателей и фаундеров. Назван в честь <strong class="text-white">Генриха Сауловича Альтшуллера</strong> (1926–1998), создателя ТРИЗ.
+        Устраняет противоречия по АРИЗ-AI за счет скрытых ресурсов системы с <strong class="text-cyan-300">нулевой себестоимостью</strong>.
       </p>
     </div>
 

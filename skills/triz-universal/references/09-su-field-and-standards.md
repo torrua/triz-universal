@@ -1,18 +1,18 @@
 ---
 description: >-
-  Substance-Field (Su-Field / Веполь) analysis, MATChEM field taxonomy, and the 5 Classes of Standard Inventive Solutions adapted for modern systems.
+  Substance-Field (Su-Field) analysis, MATChEM field taxonomy, and the 5 Classes of Standard Inventive Solutions adapted for modern systems.
 metadata:
   tags: [su-field, vepol, 76-standards, MATChEM, interactions, system-pathology]
   source: TRIZ-Classical & Modern
 ---
 
-# 09. Substance-Field (Su-Field / Веполь) Analysis & Standard Solutions
+# 09. Substance-Field (Su-Field) Analysis & Standard Solutions
 
 > *"Any minimal working technical system consists of two interacting substances and a field connecting them. If an interaction is harmful or insufficient, the Su-Field model dictates the exact structural standard to fix it."* — Genrich Altshuller
 
 ---
 
-## 1. The Canonical Su-Field Model (Веполь)
+## 1. The Canonical Su-Field Model (Su-Field)
 
 Every minimal functional unit is represented as a triangular graph containing two substances ($S_1, S_2$) and at least one field ($F$):
 

@@ -7,89 +7,89 @@ metadata:
   source: Modern TRIZ (Litvin, Gerasimov, Axelrod)
 ---
 
-# Алгоритм функционального свертывания (Trimming Protocol)
+# Functional Trimming Protocol
 
 ## Prerequisites / Cross-references
-Свертывание (Trimming) — это главный инструмент повышения идеальности систем путем устранения промежуточных компонентов без потери функциональности:
-- Расчет идеальности и формулы ИКР: [references/01-ikr-ideality.md](../01-ikr-ideality.md)
-- Аудит скрытых ресурсов (ВПР): [references/07-resource-audit-vpr.md](../07-resource-audit-vpr.md)
-- Анализ надсистемы (9 экранов): [references/06-system-operator-9screens.md](../06-system-operator-9screens.md)
+Trimming is the primary TRIZ mechanism for increasing system ideality by eliminating intermediate components without losing functionality:
+- Ideality calculation & IFR equations: [references/01-ikr-ideality.md](../01-ikr-ideality.md)
+- Substance-Field Resource Audit (VPR): [references/07-resource-audit-vpr.md](../07-resource-audit-vpr.md)
+- Supersystem analysis (9 Screens): [references/06-system-operator-9screens.md](../06-system-operator-9screens.md)
 
 ---
 
-## 5-шаговый пошаговый протокол свертывания
+## 5-Step Trimming Algorithmic Protocol
 
 ```
-[Шаг 1: Функциональная модель] ──► [Шаг 2: Выбор кандидата] ──► [Шаг 3: Проверка Правил А, Б, В]
-                                                                          │
-[Шаг 5: Оценка идеальности] ◄──── [Шаг 4: Разрешение вторичных ФП] ◄──────┘
+[Step 1: Functional Model] ──► [Step 2: Target Selection] ──► [Step 3: Test Rules A, B, C]
+                                                                        │
+[Step 5: Ideality Gain] ◄──── [Step 4: Resolve Secondary PCs] ◄────────┘
 ```
 
-### Шаг 1. Построение функциональной модели
-1. Разложите систему на компоненты и зафиксируйте все межузловые взаимодействия в триадах:
-   $$\mathbf{[\text{Компонент-Субъект}]} \xrightarrow{\quad\text{Действие (Функция)}\quad} \mathbf{[\text{Объект воздействия}]}$$
-2. Классифицируйте каждую функцию:
-   - **Основные (Полезные):** ради которых система создана.
-   - **Вспомогательные (Обслуживающие):** созданы лишь для того, чтобы поддержать работу других компонентов.
-   - **Вредные (Паразитные):** создают задержки, потребляют память, вызывают износ или ошибки.
+### Step 1. Constructing the Functional Model
+1. Decompose the system into components and map all interactions into triads:
+   $$\mathbf{[\text{Subject Component}]} \xrightarrow{\quad\text{Action (Function)}\quad} \mathbf{[\text{Target Object}]}$$
+2. Classify each function:
+   - **Primary (Useful):** The raison d'être of the system.
+   - **Auxiliary (Servicing):** Exists solely to assist or sustain other components.
+   - **Harmful (Parasitic):** Introduces latency, consumes memory, produces wear, or induces bugs.
 
-### Шаг 2. Выбор кандидата на свертывание (Trimming Target)
-Выбирайте компоненты в следующем порядке приоритетности:
-1. Компоненты, генерирующие наибольшее количество вредных или паразитных функций.
-2. Компоненты, выполняющие исключительно вспомогательные функции (мосты, адаптеры, промежуточные очереди, конвертеры).
-3. Компоненты с наибольшей стоимостью, энергопотреблением или накладными расходами на обслуживание.
+### Step 2. Selecting the Trimming Target
+Prioritize trimming candidates in the following order:
+1. Components generating the largest number of harmful or parasitic functions.
+2. Components performing exclusively auxiliary functions (bridges, adapters, intermediate queues, type converters).
+3. Components with the highest cost, power consumption, or maintenance overhead.
 
-### Шаг 3. Проверка 3 канонических правил свертывания
+### Step 3. Testing the 3 Canonical Trimming Rules
 
-Попытайтесь удалить выбранный компонент $K$, применив одно из трех правил:
+Attempt to trim target component $K$ using one of the three rules:
 
-#### Правило А: Ликвидация потребности в функции
-- *Условие:* Полезная функция компонента $K$ больше не требуется системе.
-- *Как достичь:* Устраните сам объект, на который была направлена функция, либо измените предшествующий процесс так, чтобы необходимость в обработке отпала.
-- *Пример:* Если кэш нужен только для компенсации медленного парсинга JSON, переход на предварительно сериализованные плоские бинарные структуры (FlatBuffers) полностью устраняет потребность в кэше.
+#### Rule A: Eliminating the Need for the Function
+- *Condition:* The useful function of component $K$ is no longer required by the system.
+- *Mechanism:* Eliminate the object of the function or restructure the upstream process so that the need for processing vanishes.
+- *Example:* If an in-memory cache exists only to mask slow JSON deserialization, switching to flat zero-copy binary formats (FlatBuffers/Cap'n Proto) completely eliminates the need for the caching layer.
 
-#### Правило Б: Объект функции выполняет ее САМ (Самообслуживание)
-- *Условие:* Объект воздействия берет на себя выполнение функции удаляемого компонента $K$.
-- *Как достичь:* Используйте внутренние ресурсы, структуру или геометрию объекта.
-- *Пример:* Вместо отдельного сервиса валидации JWT-токенов каждый внутренний воркер проверяет криптографическую подпись сам за 1 микросекунду с помощью встроенного публичного ключа.
+#### Rule B: The Object Performs the Function Itself (Self-Service)
+- *Condition:* The target object assumes the function of trimmed component $K$.
+- *Mechanism:* Mobilize the internal resources, structure, or geometry of the object.
+- *Example:* Instead of a centralized token validation service, each downstream worker cryptographically validates JWT signatures locally in 1 microsecond using an embedded public key.
 
-#### Правило В: Функцию перенимает другой компонент или надсистема
-- *Условие:* Ни Правило А, ни Правило Б неприменимы, функция объективно необходима.
-- *Как достичь:* Передайте полезную функцию удаленного компонента $K$ другому элементу, который уже присутствует в системе (или внешней среде/надсистеме), у которого есть недогруженные ресурсы.
-- *Пример:* Устранение выделенного балансировщика нагрузки (Nginx/HAProxy) за счет использования DNS-раундинга, Anycast BGP маршрутизации или возможностей сетевого стека ядра Linux (`eBPF` / `XDP`).
+#### Rule C: Function Transferred to Another Component or Supersystem
+- *Condition:* Neither Rule A nor Rule B applies; the function is objectively necessary.
+- *Mechanism:* Transfer the function of trimmed component $K$ to an existing element (or external environment/supersystem) that has idle capacity.
+- *Example:* Trimming a dedicated load balancer reverse-proxy by shifting traffic distribution to DNS round-robin, Anycast BGP routing, or Linux kernel packet filtering (`eBPF` / `XDP`).
 
-### Шаг 4. Выявление и разрешение вторичных противоречий
-Удаление компонента почти всегда порождает вторичную проблему (например: «убрали очередь RabbitMQ — теперь при всплеске трафика падает база данных»):
-- Запрещено возвращать удаленный компонент назад!
-- Сформулируйте возникшее затруднение как компактное вторичное техническое/физическое противоречие.
-- Устраните его с помощью базового алгоритма АРИЗ (см. [references/ariz-deep/01a-ariz-85v-analysis.md](01a-ariz-85v-analysis.md)) за счет мобилизации ресурсов ВПР.
+### Step 4. Identifying and Resolving Secondary Contradictions
+Trimming a component often triggers a secondary defect (e.g., "trimmed RabbitMQ — now sudden traffic bursts overload the database"):
+- Restoring the trimmed component is forbidden!
+- Formulate the resulting obstacle as a compact secondary technical/physical contradiction.
+- Eliminate it using the base ARIZ protocol ([references/ariz-deep/01a-ariz-85v-analysis.md](01a-ariz-85v-analysis.md)) by mobilizing latent VPR resources.
 
-### Шаг 5. Расчет индекса свертывания и прироста идеальности
-Оцените полученный результат:
-$$I = \frac{\sum F_{\text{полезные}}}{\sum C_{\text{затраты}} + \sum H_{\text{вред}}}$$
-- Подтвердите, что число узлов, внешних зависимостей и линий коммуникации сократилось, а целевые показатели надежности и латентности сохранились или выросли.
-
----
-
-## Практические кейсы архитектурного свертывания
-
-### Кейс 1: Свертывание слоя Kafka/RabbitMQ в Event-Driven архитектуре
-- **Исходное состояние:** Сервис заказов пишет события в Kafka, откуда сервис аналитики их вычитывает. Затраты: поддержка кластера ZooKeeper/Kafka, задержки сети, сериализация.
-- **Свертывание по Правилу В (перенос на существующий компонент):**
-  - В качестве носителя функции передачи событий используется сама СУБД заказов через механизм Change Data Capture (Postgres WAL Logical Replication).
-- **Результат:** Кластер Kafka свернут (0 серверов, $0 затрат на брокер), события передаются со скоростью чтения журнала транзакций базы данных.
-
-### Кейс 2: Свертывание промежуточных AI-агентов оркестрации
-- **Исходное состояние:** В мультиагентной системе работает «Агент-планировщик», который передает задачу «Агенту-исследователю», тот — «Агенту-писателю», а «Агент-редактор» проверяет результат. Накладные расходы: 4x потребление токенов, колоссальная задержка.
-- **Свертывание по Правилу Б и В:**
-  - «Агент-планировщик» и «Агент-редактор» сворачиваются. Их функции интегрируются в четко типизированную схему Structured Outputs и системные Guardrails исполнительного агента.
-- **Результат:** 2 узла ликвидированы, сквозная задержка снизилась на 65%, галлюцинации при передаче контекста устранены.
+### Step 5. Evaluating Ideality Gain
+Evaluate the outcome:
+$$I = \frac{\sum F_{\text{useful}}}{\sum C_{\text{cost}} + \sum H_{\text{harm}}}$$
+- Verify that node count, external dependencies, and network hops decreased while reliability and latency SLAs remained constant or improved.
 
 ---
 
-## Чеклист свертывания (Trimming Checklist)
-- [ ] Построена ли функциональная схема «Субъект $\to$ Действие $\to$ Объект»?
-- [ ] Обоснован ли выбор кандидата на свертывание (паразитный/вспомогательный узел)?
-- [ ] Какое правило сработало: **А** (потребность исчезла), **Б** (самообслуживание) или **В** (перенос функции)?
-- [ ] Устранены ли вторичные противоречия без возврата удаленного узла?
-- [ ] Подтвержден ли рост идеальности системы?
+## Architectural Case Studies
+
+### Case 1: Trimming Kafka/RabbitMQ in Event-Driven Architecture
+- **Baseline:** Order service publishes events to Kafka; Analytics service consumes them. Costs: ZooKeeper/Kafka cluster maintenance, network latency, serialization serialization.
+- **Trimming via Rule C (Transfer to existing component):**
+  - Use the Order database itself as the event delivery engine via Change Data Capture (PostgreSQL WAL Logical Replication).
+- **Outcome:** Kafka cluster trimmed (0 dedicated servers, $0 broker hosting cost); events stream at transactional write speed.
+
+### Case 2: Trimming Intermediate Orchestration Subagents
+- **Baseline:** Multi-agent pipeline with Planner Agent $\to$ Research Agent $\to$ Writer Agent $\to$ Reviewer Agent. Costs: 4x token burn, high end-to-end latency.
+- **Trimming via Rules B & C:**
+  - Trim Planner and Reviewer agents. Embed their requirements directly into structured JSON schemas and system guardrails of the core executor agent.
+- **Outcome:** 2 agent hops eliminated, end-to-end latency reduced by 65%, context-passing hallucinations prevented.
+
+---
+
+## Trimming Checklist
+- [ ] Functional triad model constructed ("Subject $\to$ Action $\to$ Target")?
+- [ ] Candidate selection justified (parasitic/auxiliary node)?
+- [ ] Winning rule identified: **A** (need eliminated), **B** (self-service), or **C** (function transferred)?
+- [ ] Secondary contradictions resolved without re-introducing trimmed components?
+- [ ] Measurable ideality increase verified?

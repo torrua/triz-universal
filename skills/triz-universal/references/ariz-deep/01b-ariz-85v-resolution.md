@@ -7,128 +7,128 @@ metadata:
   source: ARIZ-85-V (Altshuller, 1985)
 ---
 
-# АРИЗ-85-В. Части 5–9: Информфонд, тупики, верификация и рефлексия
+# ARIZ-85-V. Parts 5–9: Information Fund, Deadlocks, Verification and Reflection
 
 ## Prerequisites / Cross-references
-Настоящий модуль продолжает алгоритм, начатый в [01a-ariz-85v-analysis.md](01a-ariz-85v-analysis.md) (Части 1–4):
-- Информационный фонд (40 приемов): [references/05-40-principles-catalog.md](../05-40-principles-catalog.md)
-- Информационный фонд (76 стандартов): [references/09-su-field-and-standards.md](../09-su-field-and-standards.md)
-- Дерево физических противоречий (Таблица 2): [references/ariz-deep/04-physical-contradiction-tree.md](04-physical-contradiction-tree.md)
-- Системный оператор и надсистема: [references/06-system-operator-9screens.md](../06-system-operator-9screens.md)
-- Диверсионный анализ надежности: [references/ariz-deep/06-subversion-analysis-afd.md](06-subversion-analysis-afd.md)
+This module continues the algorithm initiated in [01a-ariz-85v-analysis.md](01a-ariz-85v-analysis.md) (Parts 1–4):
+- Information Fund (40 Principles): [references/05-40-principles-catalog.md](../05-40-principles-catalog.md)
+- Information Fund (76 Standards): [references/09-su-field-and-standards.md](../09-su-field-and-standards.md)
+- Physical Contradiction Tree (Table 2): [references/ariz-deep/04-physical-contradiction-tree.md](04-physical-contradiction-tree.md)
+- System Operator (9 Screens): [references/06-system-operator-9screens.md](../06-system-operator-9screens.md)
+- Anticipatory Failure Determination (AFD): [references/ariz-deep/06-subversion-analysis-afd.md](06-subversion-analysis-afd.md)
 
 ---
 
-## Часть 5. Применение информационного фонда
+## Part 5. Applying the Information Fund
 
-Цель пятой части — мобилизовать концентрированный изобретательский опыт для устранения Микро-ФП, сформулированного на Шаге 3.4.
+The goal of Part 5 is mobilizing concentrated inventive knowledge to resolve the Micro-PC formulated in Step 3.4.
 
-### Шаг 5.1. Поиск по системе стандартов (76 стандартов)
-Сопоставьте Микро-ФП и модель взаимодействия с пятью классами стандартов:
-1. Если требуется разрушить вредную связь между частицами инструмента и изделия $\longrightarrow$ Стандарты класса 1 (введение третьего вещества $S_3$ из отходов или среды, модификация существующего вещества, введение поля $F$).
-2. Если требуется обнаружить скрытое микросостояние или измерение $\longrightarrow$ Стандарты класса 4 (переход к вторичному полю, люминесценция, метки).
-3. Если требуется повысить идеальность или динамичность $\longrightarrow$ Стандарты класса 2 (переход к полисистеме, капиллярно-пористым структурам, самонастраивающимся полям).
+### Step 5.1. Searching the System of Standards (76 Standards)
+Match the Micro-PC and interaction model against the 5 classes of standards:
+1. If destroying a harmful bond between tool and product particles is required $\longrightarrow$ Class 1 standards (introducing third substance $S_3$ from waste or environment, modifying existing substance, introducing field $F$).
+2. If detecting a hidden microstate or measurement is required $\longrightarrow$ Class 4 standards (transition to secondary field, luminescence, telemetry tags).
+3. If increasing ideality or dynamism is required $\longrightarrow$ Class 2 standards (transition to poly-system, capillary-porous structures, self-adjusting fields).
 
-### Шаг 5.2. Поиск по Дереву Таблицы 2 физических эффектов
-Обратитесь к [references/ariz-deep/04-physical-contradiction-tree.md](04-physical-contradiction-tree.md) для выбора точного физического/логического механизма:
-- Разделение в пространстве ($Z_1$ vs $Z_2$).
-- Разделение во времени ($T_1$ vs $T_2$).
-- Фазовые переходы 1-го и 2-го рода, полиморфизм, бистабильные структуры.
-- Системный переход (свойства моно- против би- и поли-систем).
+### Step 5.2. Searching via Physical Contradiction Tree (Table 2)
+Refer to [references/ariz-deep/04-physical-contradiction-tree.md](04-physical-contradiction-tree.md) to choose the precise physical/logical mechanism:
+- Separation in Space ($Z_1$ vs $Z_2$).
+- Separation in Time ($T_1$ vs $T_2$).
+- Phase transitions of 1st and 2nd order, polymorphism, bistable structures.
+- System transitions (mono- vs bi- and poly-system properties).
 
-### Шаг 5.3. Поиск по каталогу 40 приемов и матрице Альтшуллера
-Примените приемы, рекомендованные для выбранного типа разделения:
-- Используйте матрицу противоречий ([references/11-contradiction-matrix.md](../11-contradiction-matrix.md)) для проверки топ-4 статистических приемов.
-- Проверьте парные и взаимодополняющие приемы (например, Прием №1 «Дробление» + Прием №5 «Объединение»).
+### Step 5.3. Searching the 40 Principles and Altshuller Matrix
+Apply principles recommended for the chosen separation operator:
+- Use the contradiction matrix ([references/11-contradiction-matrix.md](../11-contradiction-matrix.md)) to inspect top-4 statistical principles.
+- Inspect paired and complementary principles (e.g., Principle #1 "Segmentation" + Principle #5 "Merging").
 
-### Шаг 5.4. Проверка задач-аналогов
-Проверьте, как аналогичное физическое противоречие разрешено в живой природе (бионический аналог) или смежных инженерных отраслях (трансфер технологий).
+### Step 5.4. Analogous Problem Transfer
+Check how the same physical contradiction is resolved in biology (bionic analog) or adjacent engineering disciplines (technology transfer).
 
 ---
 
-## Часть 6. Изменение или замена задачи (Протокол выхода из тупика)
+## Part 6. Modifying or Replacing the Problem (Deadlock Breakthrough Protocol)
 
 > [!CAUTION]
-> **Алгоритмический триггер тупика:** Если после прохождения Частей 1–5 не найдена идея решения, удовлетворяющая критерию ИКР-1/ИКР-2, **категорически запрещается соглашаться на компромисс**. Запустите протокол Части 6.
+> **Algorithmic Deadlock Trigger:** If after completing Parts 1–5 no solution concept satisfies the IFR-1/IFR-2 criteria, **settling for a compromise is strictly forbidden**. Launch the Part 6 protocol immediately.
 
-### Шаг 6.1. Проверка на «склейку» (контаминацию) задач
-Часто неразрешимое противоречие возникает из-за одновременной попытки решить две разные задачи под видом одной:
-1. Расчлените задачу на независимые подзадачи $A$ и $B$.
-2. Решите задачу $A$ в предположении, что задача $B$ уже решена надсистемой.
-3. Устраните возникшую связку через асинхронность или архитектурное развязывание.
+### Step 6.1. Checking for Problem Contamination
+Often an intractable contradiction arises from trying to solve two distinct problems bundled as one:
+1. Decouple the problem into independent sub-problems $A$ and $B$.
+2. Solve problem $A$ assuming problem $B$ has already been solved by the supersystem.
+3. Eliminate the resulting link via asynchronous decoupled architecture.
 
-### Шаг 6.2. Превращение измерительной задачи в изменительную (и наоборот)
-- Если стояла задача **«как обнаружить/измерить дефект или задержку X»**:
-  - Снимите задачу измерения! Сформулируйте задачу изменения: *«Как изменить систему так, чтобы параметр X никогда не выходил за допустимый предел и измерять его не требовалось вообще?»*.
-- Если стояла задача **«как предотвратить изменение X»**:
-  - Сформулируйте задачу управления: разрешите параметру свободно меняться, но научитесь мгновенно считывать его текущее значение и вводить превентивную компенсацию.
+### Step 6.2. Converting Measurement to Transformation (and Vice Versa)
+- If the problem was **"how to detect/measure defect or latency X"**:
+  - Cancel the measurement problem! Formulate the transformation problem: *"How to modify the system so that parameter X never exceeds the bound and measuring it is never needed?"*.
+- If the problem was **"how to prevent change of X"**:
+  - Formulate the control problem: allow the parameter to vary freely, but detect its state instantaneously and apply proactive compensation.
 
-### Шаг 6.3. Подъем в надсистему («Задача-сверхсистема»)
-Если ресурс элемента $X$ исчерпан:
-1. Замените задачу: вместо совершенствования элемента $X$ поставьте задачу совершенствования надсистемы, в которую входит $X$.
-2. Перенесите полезную функцию элемента $X$ на уровень выше (на уровень ОС, клиентского окружения, облачной платформы или физического окружения).
-3. Сделайте элемент $X$ пассивным или вовсе исключите его.
+### Step 6.3. Ascending to the Supersystem ("Super-system Problem")
+If resource $X$ is exhausted:
+1. Instead of improving element $X$, formulate the problem of improving the supersystem containing $X$.
+2. Transfer the useful function of element $X$ one level up (OS kernel, client runtime, cloud edge, physical environment).
+3. Make element $X$ passive or trim it completely.
 
-### Шаг 6.4. Переход к альтернативной системе или анти-системе
-1. Сформулируйте анти-систему (систему, выполняющую противоположное действие).
-2. Объедините систему с анти-системой в бисистему (например, нагреватель + охладитель, шифратор + дешифратор, компилятор + декомпилятор).
-3. Если и это не дает ответа — проверьте принципиальную альтернативу (замена механики на оптику/электронику, замена реляционной СУБД на append-only event log).
+### Step 6.4. Transitioning to Alternative System or Anti-System
+1. Formulate the anti-system (system performing the opposite action).
+2. Combine the system with the anti-system into a bi-system (e.g., compressor + decompressor, encryptor + decryptor, compiler + decompiler).
+3. Check foundational alternatives (substituting compute locks with append-only event logs, replacing physical scanning with optical/virtual models).
 
-### Шаг 6.5. Возврат в Часть 1 с переопределенной моделью задачи
-Вернитесь к Шагу 1.1 с новой формулировкой задачи и повторите цикл анализа.
-
----
-
-## Часть 7. Анализ способа устранения ФП и верификация
-
-### Шаг 7.1. Проверка на многоцикловость ($N \to \infty$)
-Решение считается ложным, если оно работает только для однократного запуска, но деградирует во времени:
-- Проверьте поведение решения при $N \to \infty$ циклов: накапливаются ли скрытые отходы, фрагментация памяти, термическое напряжение, утечки дескрипторов, усталость материала?
-- Устраните факторы деградации с помощью принципа авто-регенерации или циклического сброса.
-
-### Шаг 7.2. Декомпозиция вторичных задач на 4 канонических класса
-Любое сильное решение порождает вторичные подзадачи. Классифицируйте их для предотвращения хаотического проектирования:
-1. **Изобретательские подзадачи:** Содержат неразрешенные противоречия. Требуют отдельного локального запуска мини-цикла АРИЗ.
-2. **Конструкторские / Архитектурные подзадачи:** Не содержат противоречий. Решаются известными инженерными паттернами, стандартными библиотеками или справочными узлами.
-3. **Расчетные / Калибровочные подзадачи:** Требуют математического моделирования, подбора пороговых констант, профилирования латентности или бенчмаркинга.
-4. **Организационные подзадачи:** Связаны с регламентами, процессами деплоя, документацией, обучением команды или взаимодействием служб.
+### Step 6.5. Return to Part 1 with Redefined Problem Model
+Return to Step 1.1 with the new formulation and repeat the analysis cycle.
 
 ---
 
-## Часть 8. Развитие и применение полученного ответа
+## Part 7. Analysis of the Resolution Mechanism and Verification
 
-### Шаг 8.1. Применение обратного принципа
-Задайте вопрос: *«Что произойдет, если мы применим найденный принцип с точностью до наоборот?»*
-- Часто инверсия сильного решения порождает новое самостоятельное изобретение для смежного класса задач.
+### Step 7.1. Verification across Multiple Cycles ($N \to \infty$)
+A solution is false if it works only for a single execution and degrades over time:
+- Check system behavior as $N \to \infty$: do hidden memory leaks, fragmentation, thermal stress, file descriptor exhaustion, or material fatigue accumulate?
+- Eliminate degradation using self-regeneration or periodic reset principles.
 
-### Шаг 8.2. Исследование пределов масштабирования ($R \to 0$ и $R \to \infty$)
-Проверьте, как ведет себя найденное решение при экстремальном изменении масштаба:
-- Что происходит при $R \to 0$ (нано-масштаб, 1 байт данных, единичный микросекундный запрос)?
-- Что происходит при $R \to \infty$ (планетарный масштаб, петабайты трафика, миллион серверов)?
-- Определите физические границы применимости принципа.
-
-### Шаг 8.3. Проверка применимости к надсистеме и смежным доменам
-Оцените потенциал решения: может ли тот же принцип быть использован для решения проблем во всей инфраструктуре компании или в смежных отраслях?
-
----
-
-## Часть 9. Анализ хода решения (Метакогнитивная рефлексия)
-
-### Шаг 9.1. Сравнение фактического пути с эталоном АРИЗ
-Сопоставьте реальный ход рассуждений с шагами алгоритма:
-- Был ли совершен прямой переход от анализа к ответу в обход формулировки Микро-ФП?
-- На каком шаге возник главный инсайт?
-- Были ли попытки поддаться психологической инерции или согласиться на компромисс?
-
-### Шаг 9.2. Фиксация нового эвристического паттерна
-Сформулируйте выявленную эвристику в обобщенном виде:
-> «Для задач класса `[Класс конфликта]` эффективен переход к `[Физический/логический принцип]` через мобилизацию ресурса `[Тип ВПР]`».
+### Step 7.2. Decomposing Secondary Problems into 4 Canonical Classes
+Every strong inventive solution introduces secondary sub-problems. Classify them systematically:
+1. **Inventive Sub-problems:** Contain unresolved contradictions. Require an isolated mini-ARIZ cycle.
+2. **Design / Architectural Sub-problems:** Contain no contradictions. Resolved with established engineering patterns, standard libraries, or known components.
+3. **Calculational / Calibration Sub-problems:** Require mathematical modeling, threshold constant tuning, latency profiling, or empirical benchmarking.
+4. **Organizational Sub-problems:** Related to deployment runbooks, documentation, team training, or cross-service SLAs.
 
 ---
 
-## Итоговый чеклист готовности решения (Части 5–9)
-- [ ] Физическое противоречие устранено без ухудшения сопряженных параметров.
-- [ ] Проверена многоцикловость ($N \to \infty$), отсутствуют накапливающиеся утечки.
-- [ ] Все вторичные задачи разложены по 4 корзинам (изобретательские, конструкторские, расчетные, организационные).
-- [ ] Исследованы границы масштаба ($R \to 0$ и $R \to \infty$).
-- [ ] Проведена рефлексия хода решения по Части 9.
+## Part 8. Developing and Generalizing the Solution
+
+### Step 8.1. Applying the Inverted Principle
+Ask: *"What happens if we apply the discovered principle in reverse?"*
+- Inverting a strong inventive solution frequently yields a distinct invention for an adjacent problem domain.
+
+### Step 8.2. Investigating Scaling Boundaries ($R \to 0$ and $R \to \infty$)
+Inspect behavior at extreme scale boundaries:
+- What happens at $R \to 0$ (nano-scale, 1 byte, single microsecond request)?
+- What happens at $R \to \infty$ (planetary scale, petabytes of traffic, million servers)?
+- Define the physical boundary of applicability.
+
+### Step 8.3. Cross-Domain Transfer
+Assess whether the same principle can be applied across company-wide infrastructure or in unrelated industries.
+
+---
+
+## Part 9. Meta-Cognitive Solution Analysis (Reflection)
+
+### Step 9.1. Comparing Actual Path to Canonical ARIZ Benchmark
+Map actual reasoning steps against the algorithm:
+- Did reasoning skip the Micro-PC formulation prematurely?
+- At which specific step did the primary breakthrough insight occur?
+- Were there moments of psychological inertia or temptation to compromise?
+
+### Step 9.2. Recording New Heuristic Patterns
+Formulate the discovered heuristic in generalized terms:
+> "For problem class `[Conflict Class]`, transition to `[Physical/Logical Principle]` is achieved by mobilizing resource `[VPR Type]`."
+
+---
+
+## Final Solution Readiness Checklist (Parts 5–9)
+- [ ] Physical contradiction eliminated without degrading coupled parameters.
+- [ ] Multi-cycle durability verified ($N \to \infty$), zero resource accumulation.
+- [ ] All secondary sub-problems categorized into 4 canonical buckets.
+- [ ] Scale boundaries verified ($R \to 0$ and $R \to \infty$).
+- [ ] Methodological reflection conducted per Part 9.

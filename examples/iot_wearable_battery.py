@@ -10,12 +10,12 @@ def main():
     consultant = ConsultantSession()
     report = consultant.run_template("iot_wearable_battery")
     
-    print("\n--- Решение простым языком (Layer 1) ---")
+    print("\n--- Layer 1: Plain-Language Solution ---")
     print(report.result.layer_1)
     
     with open("iot_wearable_battery_report.md", "w", encoding="utf-8") as f:
         f.write(report.to_markdown())
-    print("\n✓ Сохранен полный отчет в 'iot_wearable_battery_report.md'")
+    print("\n[+] Full report saved to 'iot_wearable_battery_report.md'")
 
 if __name__ == "__main__":
     main()

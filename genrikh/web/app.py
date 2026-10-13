@@ -52,7 +52,7 @@ HTML_CONTENT = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Генрих (Genrikh) — Универсальный Изобретательский Партнер</title>
+  <title>Genrikh — Universal Inventive Problem Solver</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
@@ -67,7 +67,7 @@ HTML_CONTENT = """<!DOCTYPE html>
   <header class="glass border-b border-gray-800 sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <span class="text-2xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">🏛️ Генрих (Genrikh)</span>
+        <span class="text-2xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">🏛️ Genrikh</span>
         <span class="text-xs uppercase tracking-widest px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 font-mono">Open-Source AI</span>
       </div>
       <div class="flex items-center gap-4 text-sm text-gray-400">
@@ -82,10 +82,10 @@ HTML_CONTENT = """<!DOCTYPE html>
   <!-- Hero -->
   <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
     <div class="text-center space-y-3 max-w-3xl mx-auto">
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Решение противоречий без компромиссов</h1>
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Resolve Contradictions Without Compromise</h1>
       <p class="text-gray-400 text-base md:text-lg">
-        Универсальный инструмент для инженеров, изобретателей и фаундеров. Назван в честь <strong class="text-white">Генриха Сауловича Альтшуллера</strong> (1926–1998), создателя ТРИЗ.
-        Устраняет противоречия по АРИЗ-AI за счет скрытых ресурсов системы с <strong class="text-cyan-300">нулевой себестоимостью</strong>.
+        Universal inventive partner for engineers, hardware architects, and solo-founders. Named in honor of <strong class="text-white">Genrikh Altshuller</strong> (1926–1998), the creator of TRIZ.
+        Eliminates contradictions via ARIZ-AI using latent system resources with <strong class="text-cyan-300">zero marginal cost</strong>.
       </p>
     </div>
 

@@ -3,36 +3,28 @@ name: triz-universal
 description: >-
   Use when facing conflicting requirements where improving one metric degrades another and premature trade-offs must be avoided:
   architectural dead ends, performance vs memory/consistency conflicts, security vs usability, cost vs quality,
-  or when the user asks to solve a problem "по ТРИЗ / using TRIZ", formulate a physical contradiction (ФП / ИКР / ВПР / АРИЗ),
-  or resolve a "неразрешимый компромисс / архитектурный тупик".
+  or when the user asks to solve a problem using TRIZ, formulate a physical contradiction (PC / IFR / VPR / ARIZ),
+  or resolve an uncompromised architectural deadlock.
   Do NOT use for routine bug fixing, ordinary database lock/deadlock stack-trace debugging, simple pros/cons comparisons,
   general questions about what TRIZ is, or when the user explicitly requests a quick standard trade-off.
 metadata:
   category: technique
   triggers:
     - TRIZ
-    - ТРИЗ
-    - физическое противоречие
-    - техническое противоречие
-    - идеальный конечный результат
-    - ИКР
-    - ВПР
-    - АРИЗ
-    - неразрешимый компромисс
-    - архитектурный тупик
     - physical contradiction
     - technical contradiction
     - ideal final result
     - inventive problem
     - CAP theorem conflict
     - zero budget optimization
+    - inventive resolution
 ---
 
 # Universal TRIZ: Non-Compromising Inventive Problem Solving
 
 > **Core Axiom:** First seek an inventive resolution that improves Parameter A without degrading Parameter B. If a hard physical, mathematical, legal, budgetary, or contractual limit prevents that outcome, state the limit and its evidence rather than inventing a guarantee.
 
-> **Language Adaptation Directive:** Always respond in the language of the user's prompt (Russian prompt -> Russian response and Russian terminology; English prompt -> English response), unless the user explicitly requests another language.
+> **Language Adaptation Directive:** Always respond in the language of the user's prompt (English prompt -> English response), unless the user explicitly requests another language.
 
 ---
 
@@ -152,7 +144,7 @@ The skill enforces a strict separation between **internal reasoning** and **exte
 The skill operates in **three execution modes** (selected by context completeness and user intent):
 - **Autonomous Mode (Default):** Use when the prompt provides enough context to identify the conflict and boundary. Runs Loop 1 internally and outputs Layer 1 (or Layer 2 if TRIZ analysis was requested).
 - **Semi-Automatic Mode:** Use in interactive chat when critical constraints or system boundaries are missing: ask up to 4 targeted diagnostic questions first. **Non-Interactive / Single-Turn Fallback:** In one-shot API calls, batch evaluations, or if the user does not reply, do not block — proceed immediately using explicitly stated default assumptions.
-- **Socratic Mode:** Use when the user explicitly requests interactive coaching or step-by-step facilitation (*"/triz-session"*, *"пошагово"*, *"guide me step by step"*). Pause for user feedback after each ARIZ-AI milestone.
+- **Socratic Mode:** Use when the user explicitly requests interactive coaching or step-by-step facilitation (*"/triz-session"*, *"guide me step by step"*). Pause for user feedback after each ARIZ-AI milestone.
 
 ---
 
@@ -167,44 +159,24 @@ To maximize practical impact and prevent cognitive overload, the skill employs a
    - *If the contradiction is eliminated (Outcome 1):* Present 1–3 concrete, non-compromising inventive solutions in clear, everyday language.
    - *If an irreducible limit applies (Outcome 2):* Clearly state the limit, which assumptions make it unbreakable, and the best design within that boundary.
    - *If a soft constraint trade-off is needed (Outcome 3):* Keep all hard constraints intact, explain the soft-constraint options, and ask the user which option they authorize.
-2. **Zero Jargon:** Do NOT use TRIZ terminology (*ФП, ИКР, ВПР, ТП, Оператор РВС, Прием №...*). Explain the physical, architectural, or organizational mechanism using intuitive language (what to change, how it works, why the conflict disappears or where the hard bound lies).
+2. **Zero Jargon:** Do NOT use TRIZ terminology (Physical Contradiction, IFR, VPR, Inventive Principle numbers). Explain the physical, architectural, or organizational mechanism using intuitive language (what to change, how it works, why the conflict disappears or where the hard bound lies).
 3. **Assumptions, Residual Limits & Quick Verification (Mandatory 2–3 lines):** Briefly state the key assumption(s), what remains unverified or bounded, and one concrete check to validate the expected effect.
 4. **Contextual Closing Invitation:** When responding in standard conversational mode, offer a follow-up invitation to explore the underlying methodology:
-   - *Russian:*
-     > *«Хотите, я подробно покажу, как именно ТРИЗ-алгоритм привёл нас к этому решению (с разбором противоречия, скрытых ресурсов и применённых приёмов)?»*
-   - *English:*
-     > *“Would you like a detailed breakdown of how the TRIZ algorithm arrived at this solution (including the contradiction, resources, and inventive principles used)?”*
+   > *“Would you like a detailed breakdown of how the TRIZ algorithm arrived at this solution (including the contradiction, resources, and inventive principles used)?”*
    - *Format Exception:* Omit the closing invitation if the user requested a strict machine-readable format (JSON, YAML, raw code), an ultra-compact list, a one-line answer, or when continuing an interactive multi-step workflow where trailing prompts add unnecessary noise.
 
 ### Layer 2: Professional TRIZ Passport (Deep Mode)
 *When to use:* Triggered immediately when:
-1. **User requests a TRIZ solution upfront:** The initial prompt explicitly asks to solve using TRIZ or requests methodological analysis (*"реши по ТРИЗ", "найди решение с помощью ТРИЗ", "разбери по ТРИЗ", "выполни анализ по АРИЗ-85-В", "сформулируй ФП и ИКР", "дай ТРИЗ-паспорт решения", "solve using TRIZ", "show full TRIZ analysis", "formulate physical contradiction"*).
-2. **User accepts the Layer 1 follow-up:** The user responds affirmatively (*"Да", "Расскажи", "Интересно", "Давай подробнее", "Yes", "Show breakdown"*) **directly to the Layer 1 closing invitation** (do not confuse an affirmative reply to a separate clarifying question with a request for Layer 2).
+1. **User requests a TRIZ solution upfront:** The initial prompt explicitly asks to solve using TRIZ or requests methodological analysis (*"solve using TRIZ", "show full TRIZ analysis", "formulate physical contradiction", "show ARIZ breakdown"*).
+2. **User accepts the Layer 1 follow-up:** The user responds affirmatively (*"Yes", "Show breakdown", "Explain deeper"*) **directly to the Layer 1 closing invitation** (do not confuse an affirmative reply to a separate clarifying question with a request for Layer 2).
 3. **Formal verification context:** The user explicitly requests an auditable engineering contradiction passport or technical claim structuring (note: patent-style claim structuring is an engineering ideation aid, not legal or patent-attorney advice).
 
-*Routing Guardrail:* Incidental or purely meta-mentions of the word "TRIZ" / "ТРИЗ" (e.g., *"придумай задачи для скилла ТРИЗ"*, *"что такое ТРИЗ?"*, *"проверь код ТРИЗ-модуля"*) MUST NOT trigger the Layer 2 contradiction passport. Layer 2 requires an explicit intent to solve or decompose a problem using TRIZ methodology.
+*Routing Guardrail:* Incidental or purely meta-mentions of the word "TRIZ" (e.g., *"check this TRIZ module code"*, *"what is TRIZ?"*) MUST NOT trigger the Layer 2 contradiction passport. Layer 2 requires an explicit intent to solve or decompose a problem using TRIZ methodology.
 
 *Confidence Levels (see [references/CLAIMS.md](references/CLAIMS.md)):*
-- **Established fact / Факт:** Verified by primary documentation, formal proof, or measured user benchmark.
-- **Pattern / Паттерн:** Known engineering/business pattern whose quantitative effect depends on workload or context.
-- **Hypothesis / Гипотеза:** Untested mechanism requiring an experiment before adoption.
-
-#### Шаблон вывода на русском языке:
-```markdown
-### 💡 ТРИЗ-Изобретательское Решение
-- **Классификация ограничений:** [Жёсткие (Hard): ... | Мягкие (Soft): ... | Допущения (Assumptions): ...]
-- **Тип исхода:** [Устранение противоречия | Доказанный предел | Авторизованный мягкий компромисс]
-- **Физическое противоречие (ФП):** [Элемент X должен обладать свойством P для R1, и НЕ-P для R2]
-- **Диагностический путь:** [ГДЕ / КОГДА / ПО СОСТОЯНИЮ / СТРУКТУРА / СОВМЕЩЕНИЕ / ОБХОД / АЛЬТ-СИСТЕМА / ПРЕДЕЛ]
-- **Примененная стратегия:** [В пространстве | Во времени | По состоянию | По структуре | Совмещение | Обход | Альтернативная система | Доказанный предел | Управляемый компромисс]
-- **Использованный прием(ы):** [Прием №N: Каноническое русское название — и ПОЧЕМУ выбран]
-- **Мобилизованный ресурс (ВПР):** [Использованный внутренний/надсистемный ресурс и его граничные условия]
-- **Решение:** [Суть механизма устранения противоречия, работа в рамках предела или согласованный мягкий компромисс]
-- **Доказательная база и уверенность:** [Факт | Паттерн | Гипотеза; источник или обоснование из CLAIMS.md]
-- **План верификации:** [Базовая линия, эксперимент, порог успеха и предлагаемая роль для проверки]
-- **Остаточные риски:** [Неустранимые пределы, приватность, комплаенс, стоимость и режимы отказа]
-- **Ожидаемый результат и статус проверки:** [Статус: НЕ ПРОВЕРЕНО (ожидаемый эффект при указанных допущениях) | ИЗМЕРЕНО (только при наличии реальных замеров)]
-```
+- **Established fact:** Verified by primary documentation, formal proof, or measured user benchmark.
+- **Pattern:** Known engineering/business pattern whose quantitative effect depends on workload or context.
+- **Hypothesis:** Untested mechanism requiring an experiment before adoption.
 
 #### English Delivery Template:
 ```markdown

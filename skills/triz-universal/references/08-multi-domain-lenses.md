@@ -27,7 +27,7 @@ To ensure that `triz-universal` functions as a genuinely universal skill, this r
 | **Opposing $\neg P$** | Asynchronous, zero-copy, lock-free, ephemeral, dynamic. | Probabilistic, concise, unconstrained, fast-pass, passive. | Frictionless, self-serve, decentralized, freemium, automated. | Flexible, lightweight, transparent, cooled, insulating. |
 | **Harmful Factor $H$** | Latency, OOM crash, deadlock, race condition, tech debt. | Hallucination, token exhaustion, cognitive drift, prompt injection. | Customer churn, fraud, regulatory fine, high CAC, burnout. | Thermal wear, friction, fracture, material fatigue, corrosion. |
 | **Useful Function $F$** | Data integrity, throughput, consistency, sub-ms retrieval. | Accurate reasoning, tool execution, grounded synthesis. | Revenue growth, retention, conversion, compliance security. | Load bearing, energy transfer, containment, speed. |
-| **Free Resource (ВПР)** | Idle CPU cycles, struct padding, natural data ordering, OS kernel. | Attention mask, user input keywords, structured JSON schemas, cache. | User referral intent, dormant customer data, partner distribution. | Ambient air, gravity, waste heat, thermal gradients, friction. |
+| **Free Resource (VPR)** | Idle CPU cycles, struct padding, natural data ordering, OS kernel. | Attention mask, user input keywords, structured JSON schemas, cache. | User referral intent, dormant customer data, partner distribution. | Ambient air, gravity, waste heat, thermal gradients, friction. |
 
 ---
 

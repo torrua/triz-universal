@@ -1,16 +1,16 @@
 ---
 description: >-
-  Guide for identifying and exploiting hidden Substance-Field Resources (VPR / ВПР) across software, AI systems, and business operations.
+  Guide for identifying and exploiting hidden Substance-Field Resources (VPR) across software, AI systems, and business operations.
 metadata:
   tags: [vpr, resources, zero-cost, memory-audit, temporal-audit, multi-domain]
   source: TRIZ-Classical & Modern
 ---
 
-# 07. Substance-Field & Latent Resource Audit (ВПР)
+# 07. Substance-Field & Latent Resource Audit (VPR)
 
 > *"The highest art of invention is to solve a problem using the very thing that caused the problem."* — Genrich Altshuller
 
-In classical TRIZ, **Substance-Field Resources (ВПР)** are substances and fields present in or around the system that can be mobilized for free ($0.00). In digital, software, AI, and organizational systems, resources are abundant, but engineers and managers suffer from "resource blindness."
+In classical TRIZ, **Substance-Field Resources (VPR)** are substances and fields present in or around the system that can be mobilized for free ($0.00). In digital, software, AI, and organizational systems, resources are abundant, but engineers and managers suffer from "resource blindness."
 
 ---
 

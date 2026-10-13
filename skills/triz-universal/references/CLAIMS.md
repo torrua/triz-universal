@@ -13,9 +13,9 @@ Use this register whenever a resolution depends on a claim that affects feasibil
 
 ## Evidence Level Definitions
 
-- **Established (`Факт`):** Backed by a formal mathematical theorem (under verified assumptions), normative specification, or direct empirical measurement in the target system.
-- **Pattern (`Паттерн`):** A well-documented architectural or organizational mechanism whose quantitative benefit depends on workload, hardware, or operational context.
-- **Hypothesis (`Гипотеза`):** A novel or context-dependent proposal that requires a controlled experiment or legal/compliance sign-off before production adoption.
+- **Established:** Backed by a formal mathematical theorem (under verified assumptions), normative specification, or direct empirical measurement in the target system.
+- **Pattern:** A well-documented architectural or organizational mechanism whose quantitative benefit depends on workload, hardware, or operational context.
+- **Hypothesis:** A novel or context-dependent proposal that requires a controlled experiment or legal/compliance sign-off before production adoption.
 
 ## Registered Claims
 

@@ -1,4 +1,4 @@
-# 🏛️ Генрих (Genrikh): Universal Inventive Problem Solver on Open-Source AI
+# 🏛️ Genrikh: Universal Inventive Problem Solver on Open-Source AI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -26,7 +26,7 @@ After analyzing hundreds of thousands of patents worldwide, Altshuller uncovered
 
 Today, standard LLMs default to lazy middle-ground compromises (*"just add Redis"*, *"buy a larger AWS cluster"*, *"drop your precision"*).
 
-**Генрих (Genrikh)** brings Altshuller's rigorous methodology into the era of modern AI:
+**Genrikh** brings Altshuller's rigorous methodology into the era of modern AI:
 1. **Universal Problem Scope:** From distributed database synchronization to IoT hardware battery life and organizational scaling bottlenecks.
 2. **Strict Dual-Loop ARIZ-AI Pipeline:** Guarantees zero compromise through an internal **State Lock** before presenting solutions.
 3. **$0 Marginal Cost:** Mandates the **Ideal Final Result (IFR)** and leverages latent **Substance-Field Resources (VPR)** to solve problems with zero added cost.

@@ -41,9 +41,9 @@ Instead of paying for expensive cloud scaling or degrading functionality, we exp
 - **Diagnostic Path:** WHEN (Separation in Time) + STRUCTURE (Separation by Structure)
 - **Strategy Applied:** Separation in Time & Structure (Strategies 2 & 4)
 - **Inventive Principles Used:**
-  - Principle #4 (Asymmetry / Асимметрия): CQRS-style decoupling of ingestion from reporting.
-  - Principle #10 (Preliminary Action / Предварительное действие): Pre-indexing & materialized views.
-  - Principle #2 (Extraction / Вынесение): Isolating resource-heavy tasks into asynchronous workers.
+  - Principle #4 (Asymmetry): CQRS-style decoupling of ingestion from reporting.
+  - Principle #10 (Preliminary Action): Pre-indexing & materialized views.
+  - Principle #2 (Extraction): Isolating resource-heavy tasks into asynchronous workers.
 - **Mobilized Resources (VPR):** Client device compute, OS page cache, write-read volume skew.
 - **Resolution Mechanism:** Replaced synchronous, locked monolithic processing with decoupled, time-separated streams, fully eliminating contention.
 - **Evidence & Confidence:** Pattern (Established high-performance systems pattern verified in production workloads).

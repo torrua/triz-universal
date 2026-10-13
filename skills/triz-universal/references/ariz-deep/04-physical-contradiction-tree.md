@@ -7,109 +7,109 @@ metadata:
   source: ARIZ-85-V (Table 2 & Particle Rules 8-10, Altshuller 1985)
 ---
 
-# Дерево Таблицы 2: Разрешение физических противоречий
+# Physical Contradiction Tree (Table 2): Resolving Physical Contradictions
 
 ## Prerequisites / Cross-references
-Этот модуль представляет собой строгий исполнимый алгоритм выбора физических и системных механизмов устранения Микро-ФП. Базовые описания 7 стратегий разделения приведены в [references/03-separation-principles.md](../03-separation-principles.md). Настоящий документ **не дублирует теорию**, а предоставляет **детерминированное дерево ветвления**, правила частиц 8–10 и протокол мобилизации пустоты.
+This module provides a strict algorithmic protocol for selecting physical and system mechanisms to eliminate Micro-PCs. Basic conceptual descriptions of the 7 separation strategies are documented in [references/03-separation-principles.md](../03-separation-principles.md). This document provides the **deterministic decision tree**, particle rules 8–10, and the void/vacuum mobilization protocol.
 
 ---
 
-## Детерминированное дерево переходов (Decision Tree)
+## Deterministic Decision Tree
 
 ```
-                       [МИКРО-ФП: X должно быть p и ¬p]
-                                      │
-         ┌────────────────────────────┴────────────────────────────┐
-         ▼                                                         ▼
-[Пространства Z1 и Z2 РАЗДЕЛЬНЫ?]                       [Пространства Z1 и Z2 СОВПАДАЮТ?]
-         │                                                         │
-         ├─► ДА: Ветвь 1 (Пространство)                            │
-         │       • Градиенты, границы                              ▼
-         │       • Правило частиц №8                    [Времена T1 и T2 РАЗДЕЛЬНЫ?]
-         │                                                         │
-         │                                                         ├─► ДА: Ветвь 2 (Время)
-         │                                                         │       • Фазы, такты
-         │                                                         │       • Правило частиц №9
-         │                                                         │
-         │                                                         ▼
-         │                                              [Времена T1 и T2 СОВПАДАЮТ?]
-         │                                                         │
-         │                                                         ├─► Ветвь 3 (Фазовые переходы)
-         │                                                         │   • Бистабильность, полиморфизм
-         │                                                         │
-         └─────────────────────────────────────────────────────────┴─► Ветвь 4 (Системный переход)
-                                                                       • Моно-Би-Поли
-                                                                       • Правило частиц №10 (Пустота)
+                       [MICRO-PC: X must be p and NOT-p]
+                                       │
+         ┌─────────────────────────────┴─────────────────────────────┐
+         ▼                                                           ▼
+[Spaces Z1 and Z2 SEPARABLE?]                               [Spaces Z1 and Z2 COINCIDE?]
+         │                                                           │
+         ├─► YES: Branch 1 (Space)                                   │
+         │       • Gradients, boundaries                             ▼
+         │       • Particle Rule #8                         [Times T1 and T2 SEPARABLE?]
+         │                                                           │
+         │                                                           ├─► YES: Branch 2 (Time)
+         │                                                           │       • Phases, clock cycles
+         │                                                           │       • Particle Rule #9
+         │                                                           │
+         │                                                           ▼
+         │                                                  [Times T1 and T2 COINCIDE?]
+         │                                                           │
+         │                                                           ├─► Branch 3 (Phase Transitions)
+         │                                                           │   • Bistability, polymorphism
+         │                                                           │
+         └───────────────────────────────────────────────────────────┴─► Branch 4 (System Transition)
+                                                                         • Mono-Bi-Poly
+                                                                         • Particle Rule #10 (Void/Vacuum)
 ```
 
 ---
 
-## Ветвь 1: Разделение в пространстве ($Z_1 \ne Z_2$)
+## Branch 1: Separation in Space ($Z_1 \ne Z_2$)
 
-Условие перехода: свойство $p$ требуется в подзоне $Z_1$, а свойство $\neg p$ — в подзоне $Z_2$.
+Condition: Property $p$ is required in sub-zone $Z_1$, while property $\neg p$ is required in sub-zone $Z_2$.
 
-### Алгоритмический протокол:
-1. **Локализация:** Разграничьте границу между $Z_1$ и $Z_2$ (толщина переходного слоя $\to 0$).
-2. **Вспомогательное правило частиц №8 (АРИЗ-85-В):**
-   - «Если макро-объект должен быть одновременно жестким и проницаемым (или плотным и разреженным), его расщепляют на микро-частицы. В зоне $Z_1$ частицы концентрируются в плотные кластеры, а в зоне $Z_2$ рассеиваются или ориентируются ребром к потоку».
-3. **Примеры реализации:**
-   - *Software:* Выделение горячих изменяемых байтов в L1 Cache-Line ($Z_1$), а неизменяемых справочников — в Read-Only shared memory ($Z_2$).
-   - *AI Agents:* Рабочий scratchpad для черновика ($Z_1$) изолирован от проверенного контекста вызова инструментов ($Z_2$).
-   - *Hardware:* Анизотропные материалы (проводят тепло только вдоль волокон, но не поперек).
-
----
-
-## Ветвь 2: Разделение во времени ($T_1 \ne T_2$)
-
-Условие перехода: пространство едино ($Z_1 = Z_2$), но конфликтные требования разнесены во времени.
-
-### Алгоритмический протокол:
-1. **Тактирование:** Зафиксируйте строгие интервалы рабочего такта ($T_1$) и подготовительного такта ($T_2$).
-2. **Вспомогательное правило частиц №9 (АРИЗ-85-В):**
-   - «Если частицы не могут непрерывно удерживать свойство $p$, непрерывное действие заменяют импульсным (скважность $\theta$). В короткий момент импульса $\tau \ll T_1$ частицы проявляют сверхсвойство $p$, а в паузе возвращаются в ненапряженное состояние $\neg p$. Частота импульсов согласуется с собственной резонансной частотой системы».
-3. **Примеры реализации:**
-   - *Software:* Batching и Time-slicing — сборка пакетов в фоновом окне $T_2$ с импульсным параллельным сбросом за $T_1$.
-   - *AI Agents:* Предварительное асинхронное кэширование эмбеддингов в ночные часы ($T_2$) и субмиллисекундный поиск в пиковые часы ($T_1$).
-   - *Hardware:* Импульсная лазерная сварка или прерывистая ультразвуковая кавитация.
+### Algorithmic Protocol:
+1. **Localization:** Define boundary between $Z_1$ and $Z_2$ (transition thickness $\to 0$).
+2. **Particle Rule #8 (ARIZ-85-V):**
+   - "If a macro-object must be simultaneously rigid and permeable (or dense and sparse), it is divided into micro-particles. In zone $Z_1$, particles concentrate into dense clusters, while in zone $Z_2$ they disperse or align edge-on to the flow."
+3. **Implementation Examples:**
+   - *Software:* Isolating mutable hot-path state into an L1 cache line ($Z_1$), while immutable reference tables sit in read-only shared memory ($Z_2$).
+   - *AI Agents:* Working scratchpad workspace ($Z_1$) isolated from tool-calling context ($Z_2$).
+   - *Hardware:* Anisotropic materials (conducting heat along fibers, insulating across them).
 
 ---
 
-## Ветвь 3: Разделение по состоянию и фазовые переходы ($Z_1 = Z_2$ и $T_1 = T_2$)
+## Branch 2: Separation in Time ($T_1 \ne T_2$)
 
-Условие перехода: пространство и время строго совпадают, разделить их невозможно.
+Condition: Space coincides ($Z_1 = Z_2$), but conflicting requirements occur at different times.
 
-### Алгоритмический протокол:
-1. **Поиск триггера перехода:** Найдите параметр среды (давление, температура, электрический потенциал, частота запросов, размер полезной нагрузки), изменение которого вызывает скачкообразный фазовый переход вещества или логики.
-2. **Использование бистабильных структур:**
-   - Перевод элементов в метастабильное состояние, где ничтожное внешнее возмущение мгновенно переключает систему из $p$ в $\neg p$.
-3. **Примеры реализации:**
-   - *Software:* Адаптивные структуры данных (например, SkipList, переключающийся в B-Tree при превышении порога элементов; или динамический переход от спинлока к парковке треда при росте contention).
-   - *AI Agents:* Динамический выбор глубины CoT (Chain-of-Thought): 0 токенов рассуждения для тривиальных вопросов, скачкообразный переход к 32k токенам глубокого поиска при обнаружении маркеров неоднозначности.
-   - *Hardware:* Эффект памяти формы (нитинол), ферромагнитные жидкости, фазовый переход жидкость $\leftrightarrow$ пар.
-
----
-
-## Ветвь 4: Системный переход и Правило пустоты ($Z_1 = Z_2$ и $T_1 = T_2$)
-
-Условие перехода: фазовый переход невозможен или физически запрещен.
-
-### Алгоритмический протокол:
-1. **Сдвиг уровней (Микро $\leftrightarrow$ Макро):**
-   - На уровне каждого отдельного элемента утверждается свойство $p$, но совокупность этих элементов образует надсистему со свойством $\neg p$ (или наоборот).
-2. **Вспомогательное правило частиц №10 (АРИЗ-85-В): Мобилизация пустоты:**
-   - «Если вещество или код не могут обладать требуемым свойством, вещество/код заменяют **пустотой** (вакуумом, воздушными полостями, паузами, нулевыми указателями, отсутствием вычислений). Пустота не создает сопротивления, не потребляет энергию и не изнашивается».
-3. **Примеры реализации:**
-   - *Software:* Разреженные массивы (Sparse Bitmaps) — хранятся только ненулевые биты, «пустота» исключается из адресации, снижая расход RAM на 99.9%. Lazy Evaluation — вычисление отсутствует до момента обращения.
-   - *AI Agents:* Sparse Attention — механизм внимания не связывает все токены со всеми, а оставляет «пустоты» между несвязанными блоками контекста.
-   - *Hardware:* Пористые и сотовые конструкции, пенометаллы, вакуумная термоизоляция.
+### Algorithmic Protocol:
+1. **Clocking:** Fix strict intervals for the active operating phase ($T_1$) and preparatory phase ($T_2$).
+2. **Particle Rule #9 (ARIZ-85-V):**
+   - "If particles cannot continuously maintain property $p$, replace continuous action with pulsed action (duty cycle $\theta$). During the short pulse $\tau \ll T_1$, particles exhibit extreme property $p$, and return to relaxed state $\neg p$ during the interval. The pulse frequency matches the natural resonance of the system."
+3. **Implementation Examples:**
+   - *Software:* Batching and Time-slicing — accumulating packets during background window $T_2$ and flushing in parallel bursts during $T_1$.
+   - *AI Agents:* Asynchronous pre-caching of vector embeddings during off-peak hours ($T_2$) and sub-millisecond retrieval during peak hours ($T_1$).
+   - *Hardware:* Pulsed laser welding or intermittent ultrasonic cavitation.
 
 ---
 
-## Карта выбора решений по Таблице 2
+## Branch 3: Separation by Condition and Phase Transitions ($Z_1 = Z_2 \land T_1 = T_2$)
 
-| Ситуация в ОЗ | Соотношение $Z$ и $T$ | Рекомендуемый механизм | Ключевое правило |
+Condition: Space and time coincide strictly; separation across dimensions is impossible.
+
+### Algorithmic Protocol:
+1. **Finding Transition Trigger:** Identify an environmental parameter (pressure, temperature, request rate, payload volume) whose shift triggers a step-function phase transition.
+2. **Employing Bistable Structures:**
+   - Transition elements into a metastable state where a tiny perturbation flips the system from $p$ to $\neg p$.
+3. **Implementation Examples:**
+   - *Software:* Adaptive data structures (e.g., SkipList shifting into a B-Tree once size crosses a threshold; adaptive spinlocks parking threads under sustained contention).
+   - *AI Agents:* Dynamic Chain-of-Thought (CoT) depth: 0 reasoning tokens for routine prompts, switching abruptly to 32k tokens when ambiguity markers appear.
+   - *Hardware:* Shape memory alloys (nitinol), ferromagnetic fluids, liquid $\leftrightarrow$ vapor phase change.
+
+---
+
+## Branch 4: System Transition and the Rule of the Void ($Z_1 = Z_2 \land T_1 = T_2$)
+
+Condition: Phase transitions are impossible or physically constrained.
+
+### Algorithmic Protocol:
+1. **Level Shift (Micro $\leftrightarrow$ Macro):**
+   - At the level of each individual element, property $p$ holds; but the collective forms a supersystem exhibiting property $\neg p$ (or vice versa).
+2. **Particle Rule #10 (ARIZ-85-V): Mobilizing the Void:**
+   - "If substance or code cannot possess the required property, replace substance/code with **void** (vacuum, air pockets, pauses, null pointers, absence of computation). The void creates zero friction, consumes zero energy, and does not wear out."
+3. **Implementation Examples:**
+   - *Software:* Sparse bit arrays (Roaring Bitmaps) — storing only non-zero bits; void is omitted from indexing, reducing RAM by 99.9%. Lazy evaluation — computation does not exist until accessed.
+   - *AI Agents:* Sparse Attention — attention mechanism leaves voids between unrelated context blocks rather than connecting all tokens to all tokens.
+   - *Hardware:* Honeycomb structures, metal foams, vacuum thermal insulation.
+
+---
+
+## Table 2 Decision Matrix
+
+| Operational Zone State | $Z$ and $T$ Relationship | Recommended Mechanism | Key Governing Rule |
 |---|---|---|---|
-| Конфликт локализуем в пространстве | $Z_1 \ne Z_2$, любое $T$ | Зонирование, мембраны, экраны | **Правило №8 (Кластеризация частиц)** |
-| Конфликт локализуем во времени | Любое $Z$, $T_1 \ne T_2$ | Такты, импульсы, паузы | **Правило №9 (Импульсный резонанс)** |
-| Полное совпадение $Z$ и $T$ | $Z_1 = Z_2 \land T_1 = T_2$ | Фазовый переход, триггер | **Полиморфизм / Бистабильность** |
-| Ресурсы вещества исчерпаны | Предел параметров | Моно $\to$ Полисистема, пустота | **Правило №10 (Мобилизация пустоты)** |
+| Conflict localized in space | $Z_1 \ne Z_2$, any $T$ | Zoning, membranes, barriers | **Rule #8 (Particle Clustering)** |
+| Conflict localized in time | Any $Z$, $T_1 \ne T_2$ | Clocking, pulses, pauses | **Rule #9 (Pulsed Resonance)** |
+| Strict spatial/temporal overlap | $Z_1 = Z_2 \land T_1 = T_2$ | Phase transition, trigger | **Polymorphism / Bistability** |
+| Material / code limits exhausted | Boundary condition | Mono $\to$ Poly-system, void | **Rule #10 (Mobilizing the Void)** |

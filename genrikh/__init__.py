@@ -1,6 +1,6 @@
 """
-Генрих (Genrikh): Универсальный Изобретательский Партнер на Open-Source AI.
-Назван в честь Генриха Сауловича Альтшуллера (1926-1998), создателя ТРИЗ.
+Genrikh: Universal Inventive Problem Solver on Open-Source AI.
+Named in honor of Genrikh Saulovich Altshuller (1926-1998), the creator of TRIZ.
 """
 
 from genrikh.core import (

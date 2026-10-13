@@ -70,5 +70,5 @@ Before finalizing any TRIZ resolution, run these mandatory checks:
 
 ---
 
-**Next:** [07-resource-audit-vpr.md](07-resource-audit-vpr.md) — Substance-Field Resource Audit (ВПР).  
+**Next:** [07-resource-audit-vpr.md](07-resource-audit-vpr.md) — Substance-Field Resource Audit (VPR).  
 **Index:** [README.md](README.md)

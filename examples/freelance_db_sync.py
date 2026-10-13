@@ -10,15 +10,15 @@ def main():
     consultant = ConsultantSession()
     report = consultant.run_template("freelancer_offline_sync")
     
-    print("\n--- Решение простым языком (Layer 1) ---")
+    print("\n--- Layer 1: Plain-Language Solution ---")
     print(report.result.layer_1)
     
-    print("\n--- ТРИЗ-Паспорт решения (Layer 2) ---")
+    print("\n--- Layer 2: TRIZ Solution Passport ---")
     print(report.result.layer_2)
 
     with open("freelance_db_sync_report.md", "w", encoding="utf-8") as f:
         f.write(report.to_markdown())
-    print("\n✓ Сохранен полный отчет в 'freelance_db_sync_report.md'")
+    print("\n[+] Full report saved to 'freelance_db_sync_report.md'")
 
 if __name__ == "__main__":
     main()

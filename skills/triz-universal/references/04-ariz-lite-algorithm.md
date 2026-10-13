@@ -47,7 +47,7 @@ ARIZ-AI is a deterministic execution protocol designed for AI agents. It compres
 4. **Formulate Canonical PC:**
    $$\text{Element } X \text{ must be } [P] \text{ to satisfy } [R_1] \text{ AND } [\neg P] \text{ to satisfy } [R_2]$$
 
-### Step 3: Substance-Field Resource Audit (ВПР)
+### Step 3: Substance-Field Resource Audit (VPR)
 1. **Operational Zone (OZ):** Pinpoint the exact memory address, CPU register, database row, network packet, prompt context window, or checkout screen where the contradiction occurs.
 2. **Operational Time (OT):** Pinpoint the exact duration before, during, and after the conflict.
 3. **Audit Latent Resources:**

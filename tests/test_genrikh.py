@@ -18,7 +18,6 @@ def test_principles_catalog():
     assert len(PRINCIPLES) == 40
     p1 = PRINCIPLES[1]
     assert p1.name_en == "Segmentation"
-    assert p1.name_ru == "Дробление"
     assert "Microservices" in p1.software
 
 def test_parameters_catalog():
@@ -48,8 +47,8 @@ def test_offline_genrikh_engine():
         param_b="Database Memory & CPU Cost"
     )
     assert result.state_lock.outcome_type == OutcomeType.ELIMINATE
-    assert "### 💡 Решение от Генриха" in result.layer_1
-    assert "### 💡 ТРИЗ-Паспорт Решения" in result.layer_2
+    assert "### 💡 Genrikh Solution" in result.layer_1
+    assert "### 💡 TRIZ Solution Passport" in result.layer_2
     assert len(result.state_lock.mobilized_vpr) > 0
     assert result.confidence == ConfidenceLevel.PATTERN
 

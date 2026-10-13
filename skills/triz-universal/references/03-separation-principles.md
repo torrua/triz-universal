@@ -79,7 +79,7 @@ Requirement $P$ and requirement $\neg P$ are assigned to different physical, log
 
 ---
 
-## 2. Separation in Time (Разделение во времени)
+## 2. Separation in Time
 
 ### Heuristic Rule:
 Requirement $P$ is active during time interval $T_1$, and requirement $\neg P$ is active during time interval $T_2$.
@@ -101,7 +101,7 @@ Requirement $P$ is active during time interval $T_1$, and requirement $\neg P$ i
 
 ---
 
-## 3. Separation by Condition / Relation (Разделение по условию / в отношениях)
+## 3. Separation by Condition / Relation
 
 ### Heuristic Rule:
 Element $X$ exhibits property $P$ under environmental/contextual condition $C_1$, and automatically exhibits $\neg P$ under condition $C_2$ (or relative to observer $A$ vs observer $B$).
@@ -123,7 +123,7 @@ Element $X$ exhibits property $P$ under environmental/contextual condition $C_1$
 
 ---
 
-## 4. Separation by Structure / System Transition (Системный переход)
+## 4. Separation by Structure / System Transition
 
 ### Heuristic Rule:
 At the micro-level (subsystems or individual components), property $P$ is present; at the macro-level (the aggregated whole or supersystem), emergent property $\neg P$ is manifested (or vice versa).

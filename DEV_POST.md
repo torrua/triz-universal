@@ -1,5 +1,5 @@
 ---
-title: "Генрих (Genrikh): Building a $0-Marginal-Cost Universal AI Problem Solver with Gemma 2, Sentry & ElevenLabs"
+title: "Genrikh: Building a $0-Marginal-Cost Universal AI Problem Solver with Gemma 2, Sentry & ElevenLabs"
 published: false
 description: "How I built an air-gapped, open-source AI inventive solver powered by Gemma 2, classical TRIZ (ARIZ), Sentry Agent Tracing, Render, and ElevenLabs to resolve impossible trade-offs with zero compromise."
 tags: devchallenge, hf26challenge, hacktoberfest, opensource
@@ -23,13 +23,13 @@ Altshuller discovered a recurring law across every field of human ingenuity:
 > Conventional thinking resolves conflicting requirements by meeting in the middle: buying more hardware to handle unoptimized code, crippling battery life for faster sensor reads, or raising prices to cover cloud overhead.  
 > **Inventive thinking sharpens the conflict into an atomic Physical Contradiction and eliminates it completely using latent resources already present in the system.**
 
-Altshuller formalized this into **TRIZ** (*Теория Решения Изобретательских Задач* / Theory of Inventive Problem Solving) and the rigorous **ARIZ** algorithm.
+Altshuller formalized this into **TRIZ** (Theory of Inventive Problem Solving) and the rigorous **ARIZ** algorithm.
 
 When modern AI chatbots encounter tough trade-offs, they default to lazy, expensive platitudes: *"In the real world, trade-offs are inevitable. You should purchase an enterprise Redis cluster or scale your cloud instances."*
 
-I built **Генрих (Genrikh)** to change that.
+I built **Genrikh** to change that.
 
-**Генрих** is an autonomous, open-source AI problem solver that brings classical ARIZ algorithmic rigor to modern engineering, hardware, and business systems—with **$0 marginal cost** and **100% intellectual property privacy**.
+**Genrikh** is an autonomous, open-source AI problem solver that brings classical ARIZ algorithmic rigor to modern engineering, hardware, and business systems—with **$0 marginal cost** and **100% intellectual property privacy**.
 
 ---
 
@@ -43,7 +43,7 @@ When solo-founders, freelance developers, and small engineering teams build prod
 
 Hiring a human senior architect or patent attorney costs **$250–$400/hour**.
 
-With **Генрих**, any freelance engineer or consultant can run an audit in 60 seconds and deliver:
+With **Genrikh**, any freelance engineer or consultant can run an audit in 60 seconds and deliver:
 * An **Executive Briefing (Layer 1)**: Zero-jargon, solution-first implementation plan.
 * An **Engineering & Patent Passport (Layer 2)**: Auditable contradiction analysis and prior-art bypass.
 * An **Audio Executive Briefing (Layer 3)**: Generated automatically with **ElevenLabs** for stakeholder meetings and pitches.
